@@ -2,7 +2,7 @@
 // Log and retrieve patient vitals (BP, sugar, weight, etc.)
 
 const { v4: uuidv4 } = require("uuid");
-const { sendSuccess, sendError, asyncWrap } = require("../middleware/errorHandler");
+const { sendSuccess, sendError, asyncWrap } = require("../middlewares/errorHandler");
 
 // POST /api/vitals — log a new vitals entry
 const logVitals = asyncWrap(async (req, res) => {

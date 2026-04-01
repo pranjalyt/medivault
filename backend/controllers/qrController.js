@@ -2,7 +2,7 @@
 // QR code emergency access — generates tokens, serves emergency profile
 
 const { v4: uuidv4 } = require("uuid");
-const { sendSuccess, sendError, asyncWrap } = require("../middleware/errorHandler");
+const { sendSuccess, sendError, asyncWrap } = require("../middlewares/errorHandler");
 
 // POST /api/qr/generate — generate a QR token for a patient
 const generateQRToken = asyncWrap(async (req, res) => {

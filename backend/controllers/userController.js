@@ -2,7 +2,7 @@
 // Handles user CRUD — no auth for now, uses user_id from body/params
 
 const { v4: uuidv4 } = require("uuid");
-const { sendSuccess, sendError, asyncWrap } = require("../middleware/errorHandler");
+const { sendSuccess, sendError, asyncWrap } = require("../middlewares/errorHandler");
 
 // POST /api/users — create a new user
 const createUser = asyncWrap(async (req, res) => {

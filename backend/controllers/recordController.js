@@ -4,7 +4,7 @@
 const { v4: uuidv4 } = require("uuid");
 const path = require("path");
 const fs = require("fs");
-const { sendSuccess, sendError, asyncWrap } = require("../middleware/errorHandler");
+const { sendSuccess, sendError, asyncWrap } = require("../middlewares/errorHandler");
 const { explainMedicalReport } = require("../config/ai");
 
 // POST /api/records — upload a medical record
@@ -54,7 +54,7 @@ const analyzeRecord = asyncWrap(async (req, res) => {
     // Set status to processing
     db.prepare("UPDATE medical_records SET ai_status = 'processing' WHERE id = ?").run(id);
 
-    let textToAnalyze = report_text || description;
+    let textToAnalyze = report_text || record.description;
 
     // If there's a text file, read it
     if (!textToAnalyze && record.file_path && record.file_type === "text/plain") {

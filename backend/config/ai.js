@@ -16,11 +16,12 @@ const API_KEY = process.env.OPENROUTER_API_KEY || "";
  * @returns {Promise<{success: boolean, data?: string, error?: string}>}
  */
 async function callAI(systemPrompt, userPrompt, options = {}) {
-    if (!API_KEY || API_KEY === "your_openrouter_api_key_here") {
-        console.warn("⚠️  [AI] OPENROUTER_API_KEY not set. Returning mock response.");
+    const keyIsPlaceholder = !API_KEY || API_KEY.includes("REPLACE") || API_KEY === "your_openrouter_api_key_here" || !API_KEY.startsWith("sk-or-");
+    if (keyIsPlaceholder) {
+        console.warn("⚠️  [AI] OPENROUTER_API_KEY not set or is a placeholder. Returning mock response.");
         return {
             success: true,
-            data: "[AI_MOCK] AI summary unavailable — please set OPENROUTER_API_KEY in .env",
+            data: "🤖 [AI Mock] No real API key set. In a live demo, this would show an AI-generated medical summary. Set OPENROUTER_API_KEY in .env to enable real AI.",
             mock: true,
         };
     }

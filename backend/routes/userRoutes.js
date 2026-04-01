@@ -1,8 +1,8 @@
 // src/routes/userRoutes.js
 const express = require("express");
 const router = express.Router();
-const { dbGuard } = require("../middleware/dbGuard");
-const { validate } = require("../middleware/validate");
+const { dbGuard } = require("../middlewares/dbGuard");
+const { validate } = require("../middlewares/validate");
 const {
     createUser, getAllUsers, getUserById,
     updateUser, updatePatientProfile, deleteUser

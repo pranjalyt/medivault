@@ -2,7 +2,7 @@
 // Doctor creates prescriptions; AI explains medicines
 
 const { v4: uuidv4 } = require("uuid");
-const { sendSuccess, sendError, asyncWrap } = require("../middleware/errorHandler");
+const { sendSuccess, sendError, asyncWrap } = require("../middlewares/errorHandler");
 const { analyzeMedicineSideEffects, triageSymptoms } = require("../config/ai");
 
 // POST /api/prescriptions — doctor creates prescription

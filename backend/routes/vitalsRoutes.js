@@ -1,8 +1,8 @@
 // src/routes/vitalsRoutes.js
 const express = require("express");
 const router = express.Router();
-const { dbGuard } = require("../middleware/dbGuard");
-const { validate } = require("../middleware/validate");
+const { dbGuard } = require("../middlewares/dbGuard");
+const { validate } = require("../middlewares/validate");
 const { logVitals, getVitals, getLatestVitals, getVitalsSummary, deleteVital } = require("../controllers/vitalsController");
 
 router.use(dbGuard);

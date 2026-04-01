@@ -1,8 +1,8 @@
 // src/routes/prescriptionRoutes.js
 const express = require("express");
 const router = express.Router();
-const { dbGuard } = require("../middleware/dbGuard");
-const { validate } = require("../middleware/validate");
+const { dbGuard } = require("../middlewares/dbGuard");
+const { validate } = require("../middlewares/validate");
 const {
     createPrescription, getPatientPrescriptions, getPrescriptionById,
     deletePrescription, explainMedicine, triageSymptom

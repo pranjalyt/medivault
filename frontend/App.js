@@ -18,24 +18,6 @@ import AIScreen from "./src/screens/AIScreen";
 export const AppContext = React.createContext(null);
 
 const Tab = createBottomTabNavigator();
-export default function App() {
-    const [currentUser, setCurrentUser] = useState(null);
-
-    return (
-        <AppContext.Provider value={{ currentUser, setCurrentUser }}>
-            <NavigationContainer>
-                <Tab.Navigator screenOptions={{ headerShown: false }}>
-                    <Tab.Screen name="Home" component={HomeScreen} />
-                    <Tab.Screen name="Records" component={RecordsScreen} />
-                    <Tab.Screen name="Vitals" component={VitalsScreen} />
-                    <Tab.Screen name="AI" component={AIScreen} />
-                    <Tab.Screen name="Profile" component={ProfileScreen} />
-                </Tab.Navigator>
-            </NavigationContainer>
-        </AppContext.Provider>
-    );
-}
-
 const Stack = createStackNavigator();
 
 function TabNavigator() {

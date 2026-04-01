@@ -8,7 +8,7 @@ const morgan = require("morgan");
 const path = require("path");
 
 const { initDB } = require("./config/db");
-const { globalErrorHandler, notFoundHandler, sendSuccess } = require("./middleware/errorHandler");
+const { globalErrorHandler, notFoundHandler, sendSuccess } = require("./middlewares/errorHandler");
 
 // ── Routes ──────────────────────────────────────────────────────────────────
 const userRoutes = require("./routes/userRoutes");
